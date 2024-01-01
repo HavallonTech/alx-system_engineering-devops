@@ -1,9 +1,7 @@
 #!/usr/bin/env bash
-# a bash script to print a message 10 times
+# a bash script to print a message 10 times using for loop
 mess="Best School"
-i=0
-until [ "$i" -eq 10 ]
+for (( i=1; i<=10; i++ ))
 do
     echo "$mess"
-    ((i=i+1))
 done 
