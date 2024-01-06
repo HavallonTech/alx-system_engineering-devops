@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+#a bash script to display listening ports
+#netstat -tuln | awk '/^tcp/ {print $4}' | sed 's/.*://'
+# netstat -uln | awk '/^udp/ {print $4}' | sed 's/.*://'
+lsof -i -P -n | awk '$4 ~ /:/{print $9, $2, $1}' | grep LISTEN
