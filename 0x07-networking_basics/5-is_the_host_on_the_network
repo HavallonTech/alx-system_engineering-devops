@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # a bash script that pings an ip address passed to it as an argument
-if [ "$1" ] then
+if [ "$1" ]; then
     ip_address=$1
     ping -c 5 "$ip_address"
 else
