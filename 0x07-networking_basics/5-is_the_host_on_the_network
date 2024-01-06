@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 # a bash script that pings an ip address passed to it as an argument
-if [ "$#" -ne 1 ]; then
-    echo "Usage: $0 {IP_ADDRESS}"
-    exit 1
-else
+if [ "$1" ] then
     ip_address=$1
     ping -c 5 "$ip_address"
+else
+    echo "Usage: $0 {IP_ADDRESS}"
+    #exit 1
 fi
