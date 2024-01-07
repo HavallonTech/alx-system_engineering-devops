@@ -1,9 +1,3 @@
 #!/usr/bin/env bash
 # a bash script that listen to port 98  on local host
-port=98
-
-# Display a message indicating the script is listening
-#echo "Listening on port $port..."
-
-# Use netcat to listen on the specified port
-nc -l "$port"
+nc -1 98
