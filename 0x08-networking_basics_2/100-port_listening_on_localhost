@@ -6,4 +6,4 @@ port=98
 #echo "Listening on port $port..."
 
 # Use netcat to listen on the specified port
-nc -l -p "$port"
+nc -l "$port"
