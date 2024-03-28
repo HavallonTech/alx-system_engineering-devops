@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 # a script showing commands used to Install nginx on your web
 
+sudo apt-get -y update
 sudo apt-get install -y nginx
 
 # Ensure nginx is listening to port 80
