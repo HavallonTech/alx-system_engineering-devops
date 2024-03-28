@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+# a script showing commands used to Install nginx on your web-01
+
+sudo apt-update package
+sudo apt-get install -y nginx
+sudo ufw 'nginx HTTP'
+echo "Hello world!" | sudo tee /var/www/html/index.html
+sudo nginx -t
+sudo service nginx record 
+sudo service nginx start
