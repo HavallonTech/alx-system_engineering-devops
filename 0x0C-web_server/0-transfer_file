@@ -14,11 +14,11 @@ path_to_pk = $4
 
 #disabbleing strict host key checking
 
-scp -o "StrictHostKeyChecking = no" -i "$path_to_pk" "$file_path" "$user_name@$ip_address:~/"
+scp -o "StrictHostKeyChecking=no" -i "$path_to_pk" "$file_path" "$user_name@$ip_address:~/"
 
 #checking if the file transfer was successfull
 
-if [$? -eq 0]; then
+if [ $? -eq 0 ]; then
 	echo "FILE TRANSFER WAS SUCCESSFULL"
 else
 	echo "FILE TRANSFER FAILED"
