@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+#Redirection 301 permanently
+
+sudo apt-get update
+sudo apt-get install -y nginx
+
+echo "Hello World!" | sudo tee /var/www/html/index.html
+string_for_replacement="server_name _;\n\trewrite ^\/\/https:\/youtube.com"
+sudo seb -i "s/server_name _;/$string_for_replacement/" /etc/nginx/sites-enabled/default
+
+sudo service nginx restart
