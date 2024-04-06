@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+#script for haproxy configuration
+sudo apt-get install certbot
+
+
+
+sudo mkdir -p /etc/haproxy/certs
+sudo service haproxy stop
+sudo certbot certonly --standalone --preferred-challenges http --http-01-port 80 -d havallon.tech -d www.havallon.tech
+DOMAIN='ewww.havallon.tech' sudo -E bash -c 'cat /etc/letsencrypt/live/$DOMAIN/fullchain.pem /etc/letsencrypt/live/$DOMAIN/privkey.pem > /etc/haproxy/certs/$DOMAIN.pem'
+sudo ls /etc/letsencrypt/live/www.havallon.tech
+sudo chmod -R go-rwx /etc/haproxy/certs
+sudo nano /etc/haproxy/haproxy.cfg
