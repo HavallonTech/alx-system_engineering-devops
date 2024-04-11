@@ -1,4 +1,4 @@
-#i/usr/bin/rvn bash
+#!/usr/bin/evn bash
 # find out what’s keeping your Ubuntu container’s Nginx installation from listening on port 80
 
 # firstly remove the configuration
