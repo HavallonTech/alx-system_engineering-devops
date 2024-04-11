@@ -1,8 +1,7 @@
-#!/usr/bin/evn bash
-# find out what’s keeping your Ubuntu container’s Nginx installation from listening on port 80
+#!/usr/bin/env bash
+# debugging server
 
-# firstly remove the configuration
-#configure Nginx to listen on port 80 for all active IP addresses
+# Check if Nginx is already installed
 if command -v nginx &> /dev/null; then
     echo "Nginx is already installed. Skipping installation."
     rm /etc/nginx/sites-enabled/default
@@ -13,4 +12,3 @@ else
     sudo apt-get -y install nginx
 fi
 # restart
-sudo service nginx restart
