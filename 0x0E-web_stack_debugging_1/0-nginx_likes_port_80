@@ -1,0 +1,10 @@
+#i/usr/bin/rvn bash
+# find out what’s keeping your Ubuntu container’s Nginx installation from listening on port 80
+
+# firstly remove the configuration
+rm /etc/nginx/sites-enabled/default
+
+#configure Nginx to listen on port 80 for all active IP addresses
+ln -s /etc/nginx/sites-available/default/  /etc/nginx/sites-enabled/default
+
+services nginx restart
