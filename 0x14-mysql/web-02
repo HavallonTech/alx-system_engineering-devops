@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+#logging in script without password
+
+
+eval $("ssh-agent")
+ssh-add ~/.ssh/school
+
+ssh ubuntu@3.85.16.39
