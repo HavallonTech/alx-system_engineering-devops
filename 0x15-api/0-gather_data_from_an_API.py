@@ -11,14 +11,16 @@ if __name__ == "__main__":
     emp_id = sys.argv[1]
     user_response = requests.get(url + "users/{}".format(emp_id))
     user = user_response.json()
-    params = {"userid": emp_id}
-    todos_response = requests.get(url + "todos", params=params)
-    todos = todos_response.json()
-    completed = []
-    for data in todos:
-        if data.get("completed") is True:
-            completed.append(data.get("title"))
-    print("Employee {} is done with tasks({}/{}".format(user.get("name"),
-          len(completed), len(todos)))
-    for complete in completed:
-        print("\t {}".format(complete))
+    # Get the to-do list for the employee using the provided employee ID
+    params = {"userId": emp_id}
+    todos = requests.get(url + "todos", params).json()
+
+    # Filter completed tasks and count them
+    completed = [t.get("title") for t in todos if t.get("completed") is True]
+
+    # Print the employee's name and the number of completed tasks
+    print("Employee {} is done with tasks({}/{}):".format(
+        user.get("name"), len(completed), len(todos)))
+
+    # Print the completed tasks one by one with indentation
+    [print("\t {}".format(complete)) for complete in completed]
