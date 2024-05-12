@@ -1,0 +1,2 @@
+Nginx is already installed. Skipping installation.
+rm: remove write-protected regular file '/etc/nginx/sites-enabled/default'? rm: error closing file
